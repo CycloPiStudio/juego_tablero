@@ -8,7 +8,7 @@ var MAX_PLAYERS = 2
 
 onready var dic_botones = {}
 
-
+onready var escena_seleccionar = get_tree().get_root().get_node("Seleccionar")
 
 
 func create_server(SERVER_PORT):
@@ -31,23 +31,24 @@ func create_client(SERVER_IP, SERVER_PORT):
 
 func _OnConnectionFailed():
 	print("Failed al servidor")
-	
+	escena_seleccionar.PrintarResult("Fallo de conecxión")
+#	
 func _OnConnectionSucceeded():
 	print("Conectado al servidor")
-
+	escena_seleccionar.PrintarResult("Conectado al servidor")
 
 func _OnServerDisconnected():
 	print("Servidor desconectado")
-	
+	escena_seleccionar.PrintarResult("Servidor desconectado")
 	
 func _Peer_Connected(player_id):
 	print("User " + str(player_id) + " Connected")
-	
+	escena_seleccionar.PrintarResult("User " + str(player_id) + " Connected")
 	
 
 func _Peer_Disconnected(player_id):
 	print("User " + str(player_id) + " Disconnected")
-
+	escena_seleccionar.PrintarResult("User " + str(player_id) + " Disconnected")
 
 
 
