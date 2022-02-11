@@ -16,6 +16,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel" type="Panel" parent="ColorRect"]
+margin_left = 51.0
+margin_top = 33.0
+margin_right = 91.0
+margin_bottom = 73.0
+rect_scale = Vector2( 20.8, 1.88 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Cliente" type="Button" parent="."]
 margin_left = 54.3636
 margin_top = 234.679
@@ -103,10 +113,10 @@ __meta__ = {
 }
 
 [node name="LabelResult" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 25.0
-margin_right = 1001.0
-margin_bottom = 105.0
+margin_left = 87.0
+margin_top = 60.0
+margin_right = 1056.0
+margin_bottom = 140.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
