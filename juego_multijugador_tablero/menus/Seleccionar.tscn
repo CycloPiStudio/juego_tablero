@@ -11,17 +11,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1022.0
 margin_bottom = 584.0
-color = Color( 0.615686, 0.921569, 0.611765, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="ColorRect"]
-margin_left = 51.0
-margin_top = 33.0
-margin_right = 91.0
-margin_bottom = 73.0
-rect_scale = Vector2( 20.8, 1.88 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,10 +36,10 @@ __meta__ = {
 }
 
 [node name="LabelSERVER_IP" type="Label" parent="Cliente"]
-margin_left = 6.72711
-margin_top = -128.816
-margin_right = 303.727
-margin_bottom = -69.816
+margin_left = -0.363602
+margin_top = -125.679
+margin_right = 296.636
+margin_bottom = -66.679
 custom_colors/font_color = Color( 0.917647, 0.121569, 0.121569, 1 )
 text = "SERVER_IP"
 align = 1
@@ -113,13 +103,30 @@ __meta__ = {
 }
 
 [node name="LabelResult" type="Label" parent="."]
-margin_left = 87.0
-margin_top = 60.0
-margin_right = 1056.0
-margin_bottom = 140.0
+margin_left = 43.0
+margin_top = 25.0
+margin_right = 396.0
+margin_bottom = 105.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextEditchat" type="TextEdit" parent="."]
+margin_left = 433.0
+margin_top = 21.0
+margin_right = 841.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 850.0
+margin_top = 21.0
+margin_right = 1011.0
+margin_bottom = 97.0
+text = "Enviar"
+
 [connection signal="pressed" from="Cliente" to="." method="_on_Cliente_pressed"]
 [connection signal="pressed" from="Server" to="." method="_on_Server_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

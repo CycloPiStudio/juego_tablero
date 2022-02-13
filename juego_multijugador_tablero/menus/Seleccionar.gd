@@ -8,12 +8,13 @@ onready var ClienteTextEditSERVER_IP = get_node("Cliente/TextEditSERVER_IP")
 onready var ClienteTextEditSERVER_PORT = get_node("Cliente/TextEditSERVER_PORT")
 onready var ServerTextEditSERVER_PORT = get_node("Server/TextEditSERVER_PORT")
 onready var LabelResultados = get_node("LabelResult")
+onready var introText = get_node("TextEditchat")
 var mostraRresultado = " "
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ClienteTextEditSERVER_IP.set_text("127.0.0.1")
-	ClienteTextEditSERVER_PORT.set_text("1909")
-	ServerTextEditSERVER_PORT.set_text("1909")
+	ClienteTextEditSERVER_IP.set_text("84.123.115.165")
+	ClienteTextEditSERVER_PORT.set_text("6969")
+	ServerTextEditSERVER_PORT.set_text("6969")
 
 
 func _on_Cliente_pressed():
@@ -41,3 +42,7 @@ func PrintarResult(resultado):
 func desactivarBotones(d):
 	ClienteBoton.disabled = d
 	ServerBoton.disabled = d
+
+
+func _on_Button_pressed():	
+	GlobalServer.Mandar_Clientes(introText.text)

@@ -52,11 +52,13 @@ func _Peer_Disconnected(player_id):
 
 
 
-
-
-
-
-
+#esta funcion activa ejecuta la funcion con un parametro
+func Mandar_Clientes(mensaje):
+	rpc("Recibir_Clientes", mensaje)
+#esta funcion se ejecuta desde el servidor
+remote func Recibir_Clientes(mensaje):
+	escena_seleccionar.PrintarResult(mensaje)
+	
 
 
 	
