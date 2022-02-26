@@ -11,7 +11,6 @@ var jugador_preparado = false
 var jugadores_preparados = []
 
 func _ready():
-	
 	peer.connect_to_url("ws://" + url_host +":1404", PoolStringArray([PROTO_NAME]), true)
 	get_tree().connect("connection_failed", self, "_close_network")
 	get_tree().connect("connected_to_server", self, "_connected")
@@ -44,3 +43,5 @@ func preparado():
 remote func rellenar_y_vaciar_lista_espera(_jugadores_ips):
 	menus.rellenar_y_vaciar_HBoxPlayers(_jugadores_ips)
 	
+remote func listos():
+	print("start partida")
