@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://jugadores/Jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tablero/camino/Camino.tscn" type="PackedScene" id=2]
+
+[node name="Tablero" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 187 )
+scale = Vector2( 0.49917, 0.49917 )
+
+[node name="Camino" parent="." instance=ExtResource( 2 )]
