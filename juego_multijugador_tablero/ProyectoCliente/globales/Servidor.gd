@@ -7,6 +7,8 @@ var url_host = "127.0.0.1"
 
 var jugadores_ips = []
 var jugador
+var jugador_preparado = false
+var jugadores_preparados = []
 
 func _ready():
 	
@@ -33,6 +35,12 @@ func _connected():
 #			menus.cambiar_labels_players(x,str(jugadores_ips[x]))
 #			x +=1
 
+func preparado():
+	jugador_preparado = true 
+	
+	rpc_id(1,"sumar_jugador_activado",get_tree().get_network_unique_id())
+	print("Activa jugador" , get_tree().get_network_unique_id())
+	
 remote func rellenar_y_vaciar_lista_espera(_jugadores_ips):
 	menus.rellenar_y_vaciar_HBoxPlayers(_jugadores_ips)
 	
