@@ -5,7 +5,7 @@ onready var Popup_sala_espera = get_node("Popup_sala")
 onready var labelPlayer = preload("res://menus/utilidades_lobby/LabelPlayer.tscn")
 onready var Popup_container_espera = get_node("Popup_sala/VBoxContainer")
 
-
+#res://globales/Servidor.gd
 func _ready():
 	Popup_sala_espera.show()
 
@@ -19,3 +19,9 @@ func rellenar_y_vaciar_HBoxPlayers(ips):
 		nuevo_player.set_position(Popup_container_espera.get_position()) # Add it as a child of this node.
 		nuevo_player.set_text(str(i))
 #	print("hola")
+
+
+func _on_Button_pressed():
+	print("Juagdoractivado")
+	ServerM.preparado()
+	pass # Replace with function body.

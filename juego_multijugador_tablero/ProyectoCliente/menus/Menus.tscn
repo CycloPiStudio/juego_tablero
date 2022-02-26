@@ -30,3 +30,11 @@ margin_bottom = 612.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="Popup_sala"]
+margin_left = -242.0
+margin_top = -76.0
+margin_right = -26.0
+margin_bottom = 630.0
+
+[connection signal="pressed" from="Popup_sala/Button" to="." method="_on_Button_pressed"]
