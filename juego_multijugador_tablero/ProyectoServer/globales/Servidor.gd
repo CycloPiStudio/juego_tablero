@@ -32,7 +32,7 @@ remote func sumar_jugador_activado(jugador_activado):
 	jugadores_preparados.append(jugador_activado)
 	if jugadores_preparados.size() == lista_de_peers.size():
 		print("empezar_partida")
-#		if :
+		rpc("listos")
 			
 
 	
