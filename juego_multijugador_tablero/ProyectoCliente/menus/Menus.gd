@@ -12,7 +12,9 @@ func _ready():
 	
 func rellenar_y_vaciar_HBoxPlayers(ips):
 	if Popup_container_espera.get_child_count() != 0:
-		Popup_container_espera.removeChild()
+		for n in Popup_container_espera.get_children():
+			Popup_container_espera.remove_child(n)
+			n.queue_free()
 	for i in ips:
 		var nuevo_player = labelPlayer.instance()# Create a new Sprite.
 		Popup_container_espera.add_child(nuevo_player)
@@ -25,3 +27,9 @@ func _on_Button_pressed():
 	print("Juagdoractivado")
 	ServerM.preparado()
 	pass # Replace with function body.
+
+func menu_sala_visibilidad(valor):
+	if valor:
+		Popup_sala_espera.show()
+	else:
+		Popup_sala_espera.hide()
