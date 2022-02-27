@@ -1,6 +1,6 @@
 extends Node
 # conexiones
-const PORT = 6968
+const PORT = 1404
 #const PROTO_NAME = "ludus"
 var peer = WebSocketServer.new()
 onready var label = get_tree().get_root().get_node("Principal/Label")
