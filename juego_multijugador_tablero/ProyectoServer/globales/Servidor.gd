@@ -1,20 +1,20 @@
 extends Node
 # conexiones
-const PORT = 1404
+const PORT = 6968
 #const PROTO_NAME = "ludus"
 var peer = WebSocketServer.new()
 onready var label = get_tree().get_root().get_node("Principal/Label")
 
 # partida
 var jugadores_preparados = []
-
+var jugadores = {}
 var lista_de_peers 
 func _ready():
 #	print(jugadores)
 	get_tree().connect("network_peer_disconnected", self, "_peer_disconnected")
 	get_tree().connect("network_peer_connected", self, "_peer_connected")
 	
-	peer.listen(PORT, PoolStringArray(["ludus"]), true)
+	peer.listen(PORT, PoolStringArray(["bre"]), true)
 	get_tree().connect("server_disconnected", self, "_close_network")
 	get_tree().set_network_peer(peer)
 
@@ -32,16 +32,17 @@ remote func sumar_jugador_activado(jugador_activado):
 	jugadores_preparados.append(jugador_activado)
 	if jugadores_preparados.size() == lista_de_peers.size():
 		print("empezar_partida")
-		rpc("listos")
-			
-
-	
-
-#var num = 0
-#func establecer_jugador(id):
-#	jugadores[num].append(id)
-#	num += 1
-#	print("jugadores: " , jugadores)
-#	rpc_id(id, "establecer_jugador", num)
-	
+#		rechaza nuevas conecxiones
+#		peer.set_refuse_new_network_connections(true)
+		preparar_jugadores()
+		
+		
+func preparar_jugadores():
+	var n = 0
+	for i in  lista_de_peers:
+		jugadores["jugador"+str(n)] = str(i)
+		n += 1
+		rpc_id(i, "establecer_jugador", n)
+	print("jugadores ", jugadores)
+	print("jugadores[jugador0]", jugadores["jugador0"])
 	
