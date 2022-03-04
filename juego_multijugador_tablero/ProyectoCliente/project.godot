@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ServerM="*res://globales/Servidor.gd"
+CartasDic="*res://cartas/cartas_dic.gd"
 
 [display]
 

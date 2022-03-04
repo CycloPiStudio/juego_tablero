@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://tipos/OpenSans-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://menus/Menus.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 53
+font_data = ExtResource( 1 )
 
 [node name="Menus" type="Control"]
 anchor_right = 1.0
@@ -32,9 +41,43 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Popup_sala"]
-margin_left = -242.0
-margin_top = -76.0
-margin_right = -26.0
-margin_bottom = 630.0
+margin_left = -217.0
+margin_top = 142.0
+margin_right = -1.0
+margin_bottom = 633.0
+custom_fonts/font = SubResource( 1 )
+text = "unete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup_controles" type="Popup" parent="."]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_cartas" type="Button" parent="Popup_controles"]
+margin_left = 26.0
+margin_top = 28.0
+margin_right = 255.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 2 )
+text = "cartas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup_cartas" type="Popup" parent="."]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup_cartas"]
+margin_right = 1268.0
+margin_bottom = 733.0
 
 [connection signal="pressed" from="Popup_sala/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup_controles/Button_cartas" to="." method="_on_Button_cartas_pressed"]
