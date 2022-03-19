@@ -63,13 +63,13 @@ func preparar_jugadores():
 	var n = 0
 	rellenar_label("preparar jugadores\n")
 	for i in  lista_de_peers:
-		var variables_jugador_por_defecto = {"id":str(i), "combate":3, "bonus1":2, "bonus2":1}
+		var variables_jugador_por_defecto = {"mi_turno": n, "mi_id":i, "combate":3, "posicion":Vector2(64,534), "movimiento":3}
 		jugadores["jugador" + str(n)] = variables_jugador_por_defecto
+		var tu_jugador = "jugador" + str(n)
 		rellenar_label("jugador" + str(n) + ": "+ str(jugadores["jugador" + str(n)]))
-		rpc_id(i, "establecer_jugador", n)
+		rpc_id(i, "preconfigurar", tu_jugador)
 		n += 1
 	print("jugadores ", jugadores)
 	
-
 func rellenar_label(text):
 	label.add_text(str(text) + "\n")
