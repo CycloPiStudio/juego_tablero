@@ -2,7 +2,7 @@ extends Control
 
 #SALA DE ESPERA
 onready var Popup_sala_espera = get_node("Popup_sala")
-onready var Popup_container_controles = get_node("Popup_controles")
+onready var Popup_controles = get_node("Popup_controles")
 onready var Popup_cartas = get_node("Popup_cartas")
 onready var labelPlayer = preload("res://menus/utilidades_lobby/LabelPlayer.tscn")
 #onready var labelPlayer = preload("res://menus/utilidades_lobby/LineEditPlayer.tscn")
@@ -49,9 +49,9 @@ func menu_sala_visibilidad(valor):
 
 func Popup_container_controles(valor):
 	if valor:
-		Popup_container_controles.show()
+		Popup_controles.show()
 	else:
-		Popup_container_controles.hide()
+		Popup_controles.hide()
 
 
 func _on_Button_cartas_pressed():

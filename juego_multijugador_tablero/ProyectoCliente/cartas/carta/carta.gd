@@ -3,12 +3,9 @@ extends PanelContainer
 onready var titulo = get_node("VBoxContainer/TituloCarta")
 onready var textura = get_node("VBoxContainer/TextureRect")
 onready var leyenda = get_node("VBoxContainer/PanelContainer/MarginContainer/LeyendaCarta")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	
 	for i in CartasDic.dic_cartas:

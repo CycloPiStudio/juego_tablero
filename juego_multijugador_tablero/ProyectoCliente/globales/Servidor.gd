@@ -7,9 +7,9 @@ var PROTO_NAME = "bre"
 var url_host = "127.0.0.1"
 
 var jugadores_ips = []
-var jugador
-var jugador_preparado = false
-var jugadores_preparados = []
+var mi_jugador
+#var jugador_preparado = false
+#var jugadores_preparados = []
 var miid
 func _ready():
 	peer.connect_to_url("ws://" + url_host +":1404", PoolStringArray([PROTO_NAME]), true)
@@ -36,9 +36,9 @@ remote func rellenar_y_vaciar_lista_espera(_jugadores_ips , jugpre):
 	jugadores_ips = _jugadores_ips
 	menus.rellenar_y_vaciar_HBoxPlayers(jugadores_ips, jugpre)
 
-remote func establecer_jugador(n):
+remote func preconfigurar(_jug):
 #	ya se han cerrado las conecxiones y establece tu jugador
-	jugador = n
-	print("jugador: ", n)
+	mi_jugador = _jug
+	print("jugador: ")
 	escena_principal.preparar_partida()
-	
+	print("entraaaaaaaaaaa!!!!!!!!!!!!!")
