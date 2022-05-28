@@ -13,8 +13,15 @@ func _button_pressed(which):
 #	guarda la posicion a la que te mueves como partida de salida del siguiente turno
 	camino_index = which.get_index()
 	activar_botones(false)
-	get_parent().rpc_id(1, "cambiar_valor_mi_dic", ServerM.mi_jugador, "posicion", which.get_position())
-	print("pulso botonnnnn!!!!!")
+	#cuando sea el final no rcp
+	
+	if which.get_index() == get_child_count()-1:
+		
+		print("AAAAAAAAAA get_child_count() ", get_child_count())
+		get_parent().rpc_id(1, "juego_finalizado",ServerM.mi_jugador)
+	else: 
+		get_parent().rpc_id(1, "cambiar_valor_mi_dic", ServerM.mi_jugador, "posicion", which.get_position())
+		print("pulso botonnnnn!!!!!")
 	
 func activar_llamadas():
 	for b in get_children():
