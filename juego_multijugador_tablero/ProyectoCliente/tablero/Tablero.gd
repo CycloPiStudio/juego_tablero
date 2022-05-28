@@ -9,6 +9,8 @@ onready var mosca = get_node("CanvasLayerHub/SpriteMosca")
 
 func _ready():
 	cargar_juego() # Replace with function body.
+remote func jugadores_fin_comunicado(ganado):
+	print("FFFFFFFFIIIIIIIIIINNNNNNNNNNNNNNNNNN CCCCOOO", ganado)
 
 func cargar_juego():
 	var salida = camino_juego.get_child(0).get_position()
@@ -42,7 +44,7 @@ remote func empezar_juego(_turno, _jugadores):
 
 
 remote func activar_turno(act, num_ale):
-	camino_juego.activar_botones(act, num_ale)
+	camino_juego.activar_botones(act, 6)
 	print("activar_botones ", act)
 
 remote func jugadores_refrescan_dic(jugdic):
