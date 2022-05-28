@@ -5,6 +5,11 @@ func _ready():
 	pass # Replace with function body.
 var jugadores_carga =[]
 #aqui llegan las señales de los jugadores cargados
+
+remote func juego_finalizado(gana):
+	print("uuuuuuuuuuuuuuuuuuuuu FFFFFFFFFIIIIIIIIIINNNNNNNNNNNAAAAAAAAAAAALLLLLLLLLLLLLIIIIIIIIIIIIZZZZZZA")
+	rpc("jugadores_fin_comunicado", gana)
+
 remote func jugadores_cargados(id):
 	
 	jugadores_carga.append(id)
